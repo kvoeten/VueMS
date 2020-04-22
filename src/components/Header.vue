@@ -59,9 +59,15 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import {APP_TITLE} from '@/config.js'
 
 export default {
+  computed: {
+    ...mapState([
+      'isUserLoggedIn'
+    ])
+  },
   data: () => ({
     title: APP_TITLE,
     title_style: {
