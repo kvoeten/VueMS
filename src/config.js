@@ -1,5 +1,5 @@
 module.exports = {
   APP_TITLE: 'VueMS',
-  API_URL: 'https://localhost:8000/',
-  CAPTCHA_KEY: ''
+  API_URL: 'http://localhost/',
+  CAPTCHA_KEY: '6LfjRHsUAAAAAFK3VUZ_05ShAHVgS2cCRnQWnM8R'
 }

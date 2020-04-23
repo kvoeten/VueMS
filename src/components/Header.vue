@@ -15,7 +15,7 @@
         ></v-img>
       </template>
 
-      <v-toolbar-title :scroll="titleheight" style="height:80%"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
+      <v-toolbar-title :scroll="titleheight" style="height:80%;padding-left:5vw;"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
 
       <v-spacer></v-spacer>
 

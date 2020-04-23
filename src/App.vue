@@ -3,10 +3,8 @@
     <v-app>
       <page-header />
       
-      <main>
-        <v-container fluid>
-          <router-view></router-view>
-        </v-container>
+      <main style="padding-top: 6vw;">
+        <router-view></router-view>
       </main>
     </v-app>
   </div>

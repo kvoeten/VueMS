@@ -28,6 +28,7 @@
 
 <script>
 import Authenticator from '@/services/authenticator'
+
 export default {
   data () {
     return {
