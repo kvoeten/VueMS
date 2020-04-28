@@ -70,10 +70,10 @@ export default {
   },
   data: () => ({
     cards: [
-      { id: 0, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/news.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
-      { id: 1, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/news.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
-      { id: 2, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/news.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
-      { id: 3, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/news.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true }
+      { id: 0, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/Hello.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
+      { id: 1, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/Hello.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
+      { id: 2, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/Hello.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true },
+      { id: 3, title: '[Loading] Loading..', date: '01 Jan 1700', image: '/static/assets/Hello.png', desc: 'Loading...', target: '', loading: 'orange', disabled: true }
     ]
   }),
   async mounted () {

@@ -3,7 +3,7 @@
     <v-app>
       <page-header />
       
-      <main style="padding-top: 6vw;">
+      <main style="padding-top: 50px;">
         <router-view></router-view>
       </main>
     </v-app>

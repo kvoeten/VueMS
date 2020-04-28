@@ -25,7 +25,7 @@
 
     <v-navigation-drawer
       v-model="drawer"
-      absolute
+      app
       temporary
       right
     >
@@ -61,6 +61,7 @@
 <script>
 import {mapState} from 'vuex'
 import {APP_TITLE} from '@/config.js'
+import debounce from 'lodash/debounce'
 
 export default {
   computed: {
@@ -71,11 +72,14 @@ export default {
   data: () => ({
     title: APP_TITLE,
     title_style: {
+      'margin': 'auto',
       'height': '100%',
-      'font-size': '160px',
+      'position': 'absolute',
+      'font-size': '100px',
       'line-height': '100px'
     },
-    drawer: false
+    drawer: false,
+    group: null
   }),
   methods: {
     logout () {
@@ -88,16 +92,17 @@ export default {
     titleheight () {
       let height = this.$refs.titleParent.styles.height
       height = Math.trunc((height.substring(0, height.length - 2) * 0.65))
-      var margin = Math.trunc(height / 1.25)
+      this.$set(this.title_style, 'height', height + 'px')
       this.$set(this.title_style, 'font-size', height + 'px')
-      this.$set(this.title_style, 'line-height', margin + 'px')
+      this.$set(this.title_style, 'line-height', (height - 20) + 'px')
     }
   },
   created () {
-    window.addEventListener('scroll', this.titleheight)
+    this.handleDebouncedScroll = debounce(this.titleheight, 8)
+    window.addEventListener('scroll', this.handleDebouncedScroll)
   },
   destroyed () {
-    window.removeEventListener('scroll', this.titleheight)
+    window.removeEventListener('scroll', this.handleDebouncedScroll)
   },
   mounted () {
     this.titleheight()

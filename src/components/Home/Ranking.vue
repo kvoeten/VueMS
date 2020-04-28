@@ -1,7 +1,8 @@
 <template>
+<v-parallax src="/static/assets/Background.png">
   <v-container>
     <v-row
-        no-gutters=true
+        :no-gutters="true"
         class="mb-3"
       >
         <v-col
@@ -11,30 +12,25 @@
           :sm="6"
           :xs="6"
         >
-          <v-img style="float:left;margin-top:100px"
-              class="white--text align-end"
-              height="200px"
-              width="30%"
-              src="/static/assets/Char.png"
-            >
-          </v-img>
-          <v-img style="float:left"
-              class="white--text align-end"
-              height="300px"
-              width="30%"
-              src="/static/assets/Char.png"
-            >
-          </v-img>
-          <v-img style="float:left;margin-top:200px"
-              class="white--text align-end"
-              height="100px"
-              width="30%"
-              src="/static/assets/Char.png"
+          <v-img style="position: absolute; left: 0; bottom: 0; overflow:visible;"
+              width="470px"
+              src="/static/assets/Ranking.png"
             >
           </v-img>
         </v-col>
+
+        <v-col
+          height="25vw"
+          :lg="6"
+          :md="6"
+          :sm="6"
+          :xs="6"
+        >
+          
+        </v-col>
       </v-row>
-  </v-container>
+    </v-container>
+  </v-parallax>
 </template>
 
 <script>
@@ -56,5 +52,10 @@ export default {
 </script>
 
 <style scoped>
-
+  .v-parallax {
+    width: 110vw;
+    margin-left: -5vw;
+    padding-left: 5vw;
+    overflow: visible;
+  }
 </style>
