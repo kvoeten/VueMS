@@ -84,7 +84,6 @@ export default {
         const date = Date.parse(data[i].created_at)
         const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }) 
         const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(date) 
-        console.log(date)
         this.$set(this.cards, i, {
           id: i, 
           title: data[i].title, 

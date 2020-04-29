@@ -2,7 +2,6 @@
   <div id="app">
     <v-app>
       <page-header />
-      
       <main style="padding-top: 50px;">
         <router-view></router-view>
       </main>

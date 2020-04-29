@@ -14,15 +14,10 @@
           gradient="to top right, rgba(255,76,76,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-
       <v-toolbar-title :scroll="titleheight" style="height:80%;padding-left:5vw;"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
-
       <v-spacer></v-spacer>
-
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
-
     </v-app-bar>
-
     <v-navigation-drawer
       v-model="drawer"
       app
@@ -33,28 +28,32 @@
         nav
         dense
       >
+        <v-list-item two-line>
+          <v-list-item-avatar>
+            <img :src="$store.state.user.icon">
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title>{{$store.state.user.name}}</v-list-item-title>
+            <v-list-item-subtitle>{{$store.state.user.email}}</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+          active-class="orange--text text--accent-4"
         >
-          <v-list-item>
+          <v-list-item 
+            v-for="entry in $store.state.drawer"
+            :key="entry.title"
+            :to="entry.url">
             <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
+              <v-icon>{{entry.icon}}</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title>{{entry.title}}</v-list-item-title>
           </v-list-item>
-
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
-          </v-list-item>
-
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-
   </v-container>
 </template>
 
@@ -66,7 +65,8 @@ import debounce from 'lodash/debounce'
 export default {
   computed: {
     ...mapState([
-      'isUserLoggedIn'
+      'isUserLoggedIn',
+      ''
     ])
   },
   data: () => ({
@@ -82,13 +82,6 @@ export default {
     group: null
   }),
   methods: {
-    logout () {
-      this.$store.dispatch('setToken', null)
-      this.$store.dispatch('setUser', null)
-      this.$router.push({
-        name: 'home'
-      })
-    },
     titleheight () {
       let height = this.$refs.titleParent.styles.height
       height = Math.trunc((height.substring(0, height.length - 2) * 0.65))
