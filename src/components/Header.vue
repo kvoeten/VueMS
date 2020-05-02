@@ -113,7 +113,8 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-
+  .v-container {
+    width: 100vw;
+  }
 </style>
