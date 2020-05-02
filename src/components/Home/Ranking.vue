@@ -15,7 +15,6 @@
         <div class="block">
           <v-parallax src="/static/assets/Background.png">
           <v-img class="fountain"
-              width="470px"
               src="/static/assets/Ranking.png"
             >
             </v-img>
@@ -143,8 +142,14 @@ export default {
   }
   .fountain {
     position: absolute; 
+    width: 470px;
     left: 0; 
-    bottom: -80px; 
-    overflow:visible;
+    bottom: -40px; 
+    overflow: visible;
+  }
+  @media all and (max-width: 470px) {
+    .fountain { 
+      width: 100vw;
+    }
   }
 </style>
