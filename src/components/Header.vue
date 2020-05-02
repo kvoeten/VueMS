@@ -88,6 +88,15 @@ export default {
       this.$set(this.title_style, 'height', height + 'px')
       this.$set(this.title_style, 'font-size', height + 'px')
       this.$set(this.title_style, 'line-height', (height - 20) + 'px')
+    },
+    validateState () {
+      let expiration = this.$store.state.expiration
+      if (expiration != null) {
+        let time = Date.now()
+        if (time > expiration) {
+          this.$store.dispatch('logout')
+        }
+      }
     }
   },
   created () {
@@ -98,6 +107,8 @@ export default {
     window.removeEventListener('scroll', this.handleDebouncedScroll)
   },
   mounted () {
+    this.interval = setInterval(() => this.validateState(), 1000)
+    this.validateState()
     this.titleheight()
   }
 }

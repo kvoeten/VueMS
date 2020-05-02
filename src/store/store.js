@@ -12,6 +12,7 @@ export default new Vuex.Store({
   ],
   state: {
     token: null,
+    expiration: null,
     user: {
       name: APP_TITLE,
       email: 'Navigation Drawer',
@@ -22,9 +23,15 @@ export default new Vuex.Store({
     drawer: NAVIGATION_DRAWER.slice(0, 6)
   },
   mutations: {
-    setToken (state, token) {
-      state.token = token
-      state.isUserLoggedIn = !!(token)
+    setToken (state, info) {
+      if (info) {
+        state.token = info.token
+        state.expiration = Date.now() + info.expires
+      } else {
+        state.token = null
+        state.expiration = null
+      }
+      state.isUserLoggedIn = !!(info)
     },
     setUser (state, user) {
       state.user = user
@@ -37,11 +44,20 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    setToken ({commit}, token) {
-      commit('setToken', token)
+    setToken ({commit}, info) {
+      commit('setToken', info)
     },
     setUser ({commit}, user) {
       commit('setUser', user)
+    },
+    logout ({commit}) {
+      commit('setToken', null)
+      commit('setUser', {
+        name: APP_TITLE,
+        email: 'Navigation Drawer',
+        icon: '/static/assets/Error.png',
+        gradecode: 0
+      })
     }
   }
 })

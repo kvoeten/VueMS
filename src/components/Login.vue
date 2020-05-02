@@ -144,10 +144,13 @@ export default {
         if (response.error) {
           alert(response.error)
         } else {
-          this.$store.dispatch('setToken', response.data.access_token)
+          const info = {
+            token: response.data.access_token,
+            expires: response.data.expires_in * 1000
+          }
+          console.log(info)
+          this.$store.dispatch('setToken', info)
           const user = await Authenticator.user()
-          console.log(user)
-          this.$store.dispatch('setToken', response.data.access_token)
           this.$store.dispatch('setUser', user.data)
           this.$router.push({
             name: 'home'
