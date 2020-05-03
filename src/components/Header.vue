@@ -14,7 +14,8 @@
           gradient="to top right, rgba(255,76,76,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
-      <v-toolbar-title :scroll="titleheight" style="height:80%;padding-left:5vw;"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
+      <v-toolbar-title 
+      :scroll="titleheight" @click="home" style="height:80%;padding-left:5vw;"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -28,6 +29,17 @@
         nav
         dense
       >
+        <v-list-item-group
+          v-model="group"
+        >
+          <v-list-item
+              to="">
+            <v-list-item-icon class="exit"
+              @click="drawer = false">
+              <v-icon>{{'mdi-close'}}</v-icon>
+            </v-list-item-icon>
+          </v-list-item>
+        </v-list-item-group>
         <v-list-item two-line>
           <v-list-item-avatar>
             <img :src="$store.state.user.icon">
@@ -97,6 +109,13 @@ export default {
           this.$store.dispatch('logout')
         }
       }
+    },
+    home () {
+      if (this.$route.name !== 'home') {
+        this.$router.push({
+          name: 'home'
+        })
+      }
     }
   },
   created () {
@@ -116,5 +135,9 @@ export default {
 <style scoped>
   .v-container {
     width: 100vw;
+  }
+  .exit {
+    float: right;
+    padding-left: 85%
   }
 </style>
