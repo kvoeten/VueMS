@@ -9,7 +9,7 @@ module.exports = {
     {title: 'Logout', url: '/logout', icon: 'mdi-account-off', loggedin: true},
     {title: 'Login', url: '/login', icon: 'mdi-account-key', loggedin: false},
     {title: 'Register', url: '/register', icon: 'mdi-account-plus', loggedin: false},
-    {title: 'News', url: '/logout', icon: 'mdi-comment-text-multiple'},
+    {title: 'News', url: '/news', icon: 'mdi-comment-text-multiple'},
     {title: 'Ranking', url: '/logout', icon: 'mdi-crown'},
     {title: 'Downloads', url: '/logout', icon: 'mdi-download'},
     {title: 'Account', url: '/logout', icon: 'mdi-cog', loggedin: true},

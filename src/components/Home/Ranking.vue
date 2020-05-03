@@ -128,7 +128,7 @@ export default {
   }
   .avatar {
     position: relative;
-    left: -50px;
+    left: -30px;
     top: -8px;
     transform: scaleX(-1);
     height: 130px;
@@ -141,7 +141,7 @@ export default {
     width: 25px;
   }
   .fountain {
-    position: absolute; 
+    position: relative; 
     width: 470px;
     left: 0; 
     bottom: -40px; 

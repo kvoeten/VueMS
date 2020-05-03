@@ -4,6 +4,8 @@ import Home from '@/components/Home/Index'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Logout from '@/components/Logout'
+import News from '@/components/News/News'
+import Article from '@/components/News/Article'
 
 Vue.use(Router)
 
@@ -29,6 +31,17 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: News
+    },
+    {
+      path: '/article/:id',
+      name: 'article',
+      component: Article,
+      props: true
     },
     {
       path: '*',
