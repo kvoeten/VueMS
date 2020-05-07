@@ -37,6 +37,7 @@
             <v-btn
               color="orange"
               text
+              :to="`article/${card.id}`"
             >
               READ MORE
             </v-btn>
@@ -82,13 +83,12 @@ export default {
       this.cards = []
       const response = await news.getPage(page)
       if (response && response.data.success) {
-        console.log(page)
         const articles = response.data.data
         articles.forEach(article => {
           this.cards.push({
             id: article.id,
             title: article.title,
-            date: this.getDate(article.created_at),
+            date: news.getDate(article.created_at),
             image: `/static/assets/${article.category}.png`,
             desc: article.description,
             target: `article/${article.id}`,
@@ -97,12 +97,6 @@ export default {
           })
         })
       }
-    },
-    getDate (timestamp) {
-      const date = Date.parse(timestamp)
-      const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }) 
-      const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(date) 
-      return `${da} ${mo} ${ye}`
     }
   },
   async mounted () {

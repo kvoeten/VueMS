@@ -6,6 +6,7 @@ import Login from '@/components/Login'
 import Logout from '@/components/Logout'
 import News from '@/components/News/News'
 import Article from '@/components/News/Article'
+import Editor from '@/components/News/Editor'
 
 Vue.use(Router)
 
@@ -38,10 +39,19 @@ export default new Router({
       component: News
     },
     {
+      path: '/news/edit/:id',
+      name: 'edit',
+      component: Editor
+    },
+    {
+      path: '/news/edit',
+      name: 'new',
+      component: Editor
+    },
+    {
       path: '/article/:id',
       name: 'article',
-      component: Article,
-      props: true
+      component: Article
     },
     {
       path: '*',
