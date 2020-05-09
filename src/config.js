@@ -13,7 +13,15 @@ module.exports = {
     {title: 'Ranking', url: '/logout', icon: 'mdi-crown'},
     {title: 'Downloads', url: '/logout', icon: 'mdi-download'},
     {title: 'Account', url: '/logout', icon: 'mdi-cog', loggedin: true},
-    {title: 'Manage News', url: '/logout', icon: 'mdi-cog', loggedin: false, grade: 3},
-    {title: 'Manage Users', url: '/logout', icon: 'mdi-cog', loggedin: false, grade: 5}
-  ]
+    {title: 'Admin CP', url: '/logout', icon: 'mdi-cog', loggedin: true, grade: 3}
+  ],
+  FOOTER: {
+    icons: [
+      {name: 'mdi-facebook', url: ''},
+      {name: 'mdi-twitter', url: ''},
+      {name: 'mdi-linkedin', url: ''},
+      {name: 'mdi-instagram', url: ''}
+    ],
+    text: ''
+  }
 }

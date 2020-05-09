@@ -2,19 +2,23 @@
   <div id="app">
     <v-app>
       <page-header />
-      <main style="padding-top: 50px;">
+      <main class="padded">
         <router-view></router-view>
       </main>
+      <page-footer />
     </v-app>
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/Header.vue'
+import PageFooter from '@/components/Footer.vue'
+
 export default {
   name: 'app',
   components: {
-    PageHeader
+    PageHeader,
+    PageFooter
   }
 }
 </script>
@@ -24,11 +28,15 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: left;
+  color: white;
   margin-top: 60px;
 }
 .danger-alert {
   color: red;
+}
+.padded {
+  padding-top: 50px;
+  padding-bottom: 75px;
 }
 </style>

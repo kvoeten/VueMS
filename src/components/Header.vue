@@ -11,7 +11,7 @@
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(255,76,76,.5), rgba(128,208,199,.8)"
+          gradient="to bottom right, rgba(255,76,76,.5), rgba(128,208,199,.8)"
         ></v-img>
       </template>
       <v-toolbar-title 

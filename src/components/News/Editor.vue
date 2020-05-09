@@ -25,7 +25,7 @@
       label="Description"
       required
     ></v-textarea>
-    <editor-menu-bar 
+    <editor-menu-bar
       :editor="editor" 
       v-slot="{ commands, isActive }"
     >

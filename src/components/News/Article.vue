@@ -49,8 +49,6 @@ export default {
 <style scoped>
   .article {
     width: 85vw;
-    color: white;
-    text-align: left;
   }
   .title {
     font-size: 120px;

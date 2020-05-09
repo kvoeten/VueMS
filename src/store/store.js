@@ -37,8 +37,11 @@ export default new Vuex.Store({
       state.user = user
       this.state.drawer = []
       NAVIGATION_DRAWER.forEach(entry => {
-        let skipLogin = (entry.loggedin != null && (entry.loggedin !== this.state.isUserLoggedIn))
-        let skipGrade = (entry.grade != null && (entry.grade > this.state.user.gradecode))
+        let skipLogin = (entry.loggedin && (entry.loggedin !== this.state.isUserLoggedIn))
+        let skipGrade = (entry.grade && (user.gradecode < entry.grade))
+        console.log(entry)
+        console.log(skipLogin)
+        console.log(skipGrade)
         if (!skipLogin && !skipGrade) this.state.drawer.push(entry)
       })
     }
