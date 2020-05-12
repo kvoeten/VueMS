@@ -13,6 +13,7 @@
           <v-btn
             v-for="icon in icons"
             :key="icon.name"
+            :to="icon.url"
             class="mx-4 white--text"
             icon
           >
@@ -50,6 +51,5 @@ export default {
   background-image: 
     linear-gradient(to top,rgba(255,76,76,.8), rgba(128,208,199,.3)),
     url('../assets/footer.jpg');
-
 }
 </style>

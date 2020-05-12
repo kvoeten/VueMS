@@ -10,7 +10,7 @@ module.exports = {
     {title: 'Login', url: '/login', icon: 'mdi-account-key', loggedin: false},
     {title: 'Register', url: '/register', icon: 'mdi-account-plus', loggedin: false},
     {title: 'News', url: '/news', icon: 'mdi-comment-text-multiple'},
-    {title: 'Ranking', url: '/logout', icon: 'mdi-crown'},
+    {title: 'Ranking', url: '/ranking', icon: 'mdi-crown'},
     {title: 'Downloads', url: '/logout', icon: 'mdi-download'},
     {title: 'Account', url: '/logout', icon: 'mdi-cog', loggedin: true},
     {title: 'Admin CP', url: '/logout', icon: 'mdi-cog', loggedin: true, grade: 3}
@@ -23,5 +23,9 @@ module.exports = {
       {name: 'mdi-instagram', url: ''}
     ],
     text: ''
-  }
+  },
+  WORLDS: [
+    {name: 'Scania', id: 0},
+    {name: 'Bera', id: 1}
+  ]
 }

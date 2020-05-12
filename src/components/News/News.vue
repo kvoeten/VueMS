@@ -1,11 +1,5 @@
 <template>
   <v-container>
-    <v-pagination
-      v-model="page"
-      :length="length"
-      :page="page"
-      @input="setPage"
-    ></v-pagination>
     <v-row 
       class="mb-3"
     >

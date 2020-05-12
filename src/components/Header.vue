@@ -15,7 +15,19 @@
         ></v-img>
       </template>
       <v-toolbar-title 
-      :scroll="titleheight" @click="home" style="height:80%;padding-left:5vw;"><h1 id="title-main" ref="titleMain" :style="title_style">{{title}}</h1></v-toolbar-title>
+        :scroll="titleheight" 
+        style="height:80%;padding-left:5vw;"
+      >
+        <h1 
+        id="title-main" 
+        ref="titleMain" 
+        :style="title_style"
+        >
+          <router-link class="home" to="/">
+            {{title}}
+          </router-link>
+        </h1>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -139,5 +151,9 @@ export default {
   .exit {
     float: right;
     padding-left: 85%
+  }
+  .home {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
   }
 </style>

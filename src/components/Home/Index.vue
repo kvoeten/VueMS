@@ -2,7 +2,6 @@
   <v-container>
     <news />
     <ranking />
-    <news />
   </v-container>
 </template>
 

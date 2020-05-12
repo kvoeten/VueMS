@@ -37,6 +37,6 @@ export default {
 }
 .padded {
   padding-top: 50px;
-  padding-bottom: 75px;
+  padding-bottom: 100px;
 }
 </style>

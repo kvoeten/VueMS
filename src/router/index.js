@@ -7,6 +7,7 @@ import Logout from '@/components/Logout'
 import News from '@/components/News/News'
 import Article from '@/components/News/Article'
 import Editor from '@/components/News/Editor'
+import Ranking from '@/components/Ranking/Ranking'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/article/:id',
       name: 'article',
       component: Article
+    },
+    {
+      path: '/ranking',
+      name: 'ranking',
+      component: Ranking
     },
     {
       path: '*',

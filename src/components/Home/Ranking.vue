@@ -33,12 +33,14 @@
             :headers="ranking.headers"
             :items="ranking.avatars"
             hide-default-footer
-            :disable-pagination="true"
-            class="ranking"
+            disable-pagination
+            disable-filtering
+            disable-sort
+            class="overflow-y-auto ranking"
           >
             <template v-slot:item.avatar="{ item }">
               <v-img class="avatar"
-              :src="avatarUrl + item.id"
+              :src="avatarUrl + item.avatar"
               ></v-img>
             </template>
             <template v-slot:item.job="{ item }">
@@ -70,7 +72,7 @@ export default {
     
   },
   data: () => ({
-    avatarUrl: API_URL + '/avatar/image/',
+    avatarUrl: API_URL + 'avatar/image/',
     ranking: {
       headers: [
         { text: 'Rank', value: 'rank' },
@@ -89,7 +91,7 @@ export default {
       const avatars = response.data.data
       for (let i = 0; i < avatars.length && i < 3; ++i) {
         this.ranking.avatars.push({
-          rank: avatars[i].nRank,
+          rank: avatars[i].nOverallRank,
           avatar: avatars[i].dwCharacterID,
           name: avatars[i].character_stat.sCharacterName,
           world: avatars[i].nWorld,
@@ -103,6 +105,21 @@ export default {
 </script>
 
 <style scoped>
+  .ranking::-webkit-scrollbar {
+    width: 15px;
+  }
+  .ranking::-webkit-scrollbar-track {
+    background: #202020;
+    border-left: 1px solid #2c2c2c;
+  }
+  .ranking::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border: solid 3px #202020;
+    border-radius: 7px;
+  }
+  .ranking::-webkit-scrollbar-thumb:hover {
+    background: white;
+  }
   .block {
     height: 500px;
     display: block;
@@ -117,8 +134,9 @@ export default {
   .ranking {
     position: absolute;
     background-color:rgb(0,0,11, 0.80);
-    margin-top: 50px;
+    margin-top: 30px;
     width: 650px;
+    height: 440px;
     right: 15vw;
   }
   @media all and (max-width: 1000px) {
@@ -129,7 +147,6 @@ export default {
   .avatar {
     position: relative;
     left: -30px;
-    top: -8px;
     transform: scaleX(-1);
     height: 130px;
     display: block;
