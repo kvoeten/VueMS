@@ -1,6 +1,16 @@
+
 # vue-cms
 
-> A Vue.js project
+> A Vue.js CMS projects that functions with a seperate API (See my Cygnus API repository) and offers Registration flow, ranking and WYSIWYG news article creation. This was my first Vue project, so it is a bit sloppy.
+> 
+
+## Examples
+Showcasing the main look and feel of the site:
+
+<img src="https://github.com/kvoeten/VueMS/blob/master/preview/vuems.gif?raw=true" width="800px">
+
+Screenshot of the news article creator:
+![WYSIWYG](https://api.kazvoeten.com/image/vuemsedit.png)
 
 ## Build Setup
 
