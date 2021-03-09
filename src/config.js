@@ -1,9 +1,9 @@
 module.exports = {
   APP_TITLE: 'VueMS',
   API_URL: 'http://127.0.0.1/',
-  CLIENT_ID: '1',
-  CLIENT_SECRET: 'WnlXJ34B9nhIBjf5oAg12OwdLT6lopGs2cewCuVc',
-  GRANT_URL: 'https://discordapp.com/oauth2/authorize?client_id=541722262458335232&redirect_uri=http%3A%2F%2F127.0.0.1:8080/register&response_type=code&scope=identify%20email',
+  CLIENT_ID: 'CLIENT_ID_HERE',
+  CLIENT_SECRET: 'SECRET_HERE',
+  GRANT_URL: 'https://discordapp.com/oauth2/authorize?client_id=YOUR_ID_HERE&redirect_uri=http%3A%2F%2FYOUR_BASE_URL_HERE/register&response_type=code&scope=identify%20email',
   NAVIGATION_DRAWER: [
     {title: 'Home', url: '/', icon: 'mdi-home'},
     {title: 'Logout', url: '/logout', icon: 'mdi-account-off', loggedin: true},
