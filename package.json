@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@mdi/font": "^5.1.45",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "material-design-icons-iconfont": "^5.0.1",
     "tiptap": "^1.27.1",
     "tiptap-extensions": "^1.29.1",
